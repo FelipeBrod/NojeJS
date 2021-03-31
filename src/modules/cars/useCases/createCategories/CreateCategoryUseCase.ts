@@ -1,11 +1,11 @@
-import { ICategoriesRepository } from '../repositories/ICategoriesRepository';
+import { ICategoriesRepository } from '../../repositories/ICategoriesRepository';
 
 interface IRequest {
   name: string;
   description: string;
 }
 // class with only one resposability
-class CreateCategoryService {
+class CreateCategoryUseCase {
   // dependency inversion
   constructor(private categoriesRepository: ICategoriesRepository) {}
 
@@ -22,4 +22,4 @@ class CreateCategoryService {
     });
   }
 }
-export { CreateCategoryService };
+export { CreateCategoryUseCase };
