@@ -19,7 +19,7 @@ class CategoriesRepository implements ICategoriesRepository {
     return CategoriesRepository.INSTANCE;
   }
 
-  create({ description, name }: ICreateCategoryDTO): void {
+  create({ name, description }: ICreateCategoryDTO): void {
     const category = new Category();
 
     Object.assign(category, {
@@ -27,11 +27,13 @@ class CategoriesRepository implements ICategoriesRepository {
       description,
       created_at: new Date(),
     });
-
+    console.log(`Category:  ${category.name} created`);
+    console.log(`Description: ${category.description} created`);
     this.categories.push(category);
   }
 
   list(): Category[] {
+    console.log('returning list');
     return this.categories;
   }
 
