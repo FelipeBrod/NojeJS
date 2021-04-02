@@ -1,4 +1,5 @@
 import { Category } from 'modules/cars/entities/Category';
+import { inject, injectable } from 'tsyringe';
 
 import { ICategoriesRepository } from '../../repositories/ICategoriesRepository';
 

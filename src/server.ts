@@ -15,4 +15,4 @@ app.use(router);
 
 app.use('/api-docs', SwaggerUI.serve, SwaggerUI.setup(swaggerFile));
 
-app.listen(3333, () => console.log('Server is running'));
+app.listen(3333, () => console.log('Server is running on 3333'));
