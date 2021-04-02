@@ -4,7 +4,7 @@ export class CreateSpecifications1617327655848 implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.createTable(
       new Table({
-        name: 'Specification',
+        name: 'specifications',
         columns: [
           {
             name: 'id',
@@ -22,12 +22,14 @@ export class CreateSpecifications1617327655848 implements MigrationInterface {
           {
             name: 'created_at',
             type: 'timestamp',
-            default: 'now',
+            default: 'now()',
           },
         ],
       }),
     );
   }
 
-  public async down(queryRunner: QueryRunner): Promise<void> {}
+  public async down(queryRunner: QueryRunner): Promise<void> {
+    await queryRunner.dropTable('specifications');
+  }
 }
